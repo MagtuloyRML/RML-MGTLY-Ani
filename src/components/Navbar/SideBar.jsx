@@ -8,7 +8,7 @@ const SideBar = () => {
     const {isShow , showSideBar} = useContext(SidebarContext);
   return (
     <>
-        <nav className={`bg-white-100 w-full h-full z-20 gap-3 fixed top-0 left-${isShow ? '0' : '[-200vw]'} right-0 p-6 backdrop-blur-sm ease-in-out duration-300`} id='sidebar'>
+        <nav className={`bg-white-100 w-full h-full z-20 gap-3 fixed top-0 ${isShow ? 'left-0' : '-left-[200vw]'} p-6 backdrop-blur-sm ease-in-out duration-300`} id='sidebar'>
             <ul className='flex flex-col gap-[61px]'>
                 <li className='flex justify-between items-center gap-6'>
                     <LogoButton />
