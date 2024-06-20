@@ -6,6 +6,7 @@ import Home from './components/Home/Home.jsx'
 import AboutUs from './components/AboutUs/AboutUs.jsx'
 import Search from './components/Search/Search.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Watch from './components/Stream/Watch.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
           path: '/AboutUs',
           element: <AboutUs />,
       },
+      {
+        path: '/Watch/:id/:episodeId',
+        element: <Watch />,
+    },
     ],
     errorElement : <div>404 Not Found</div>
   },

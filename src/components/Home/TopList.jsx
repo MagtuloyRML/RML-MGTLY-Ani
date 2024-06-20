@@ -3,6 +3,7 @@ import { FaPlay } from "react-icons/fa";
 import useFetch from '../Function/useFetch';
 import useTruncate from '../Function/useTruncate';
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const TopList = () => {
     const { data, isLoading, error } = useFetch('/top-airing');
@@ -53,12 +54,11 @@ const TopList = () => {
                                     </li>
                                 )}
                             </ul>
-                            <button className='rounded-lg ease-in-out duration-300 text-white-100 text-[1.75rem] font-bold bg-orange flex items-center py-[10px] px-[24px] gap-3 hover:bg-orange-800 mt-[60px] w-fit order-4
-                            max-[1024px]:mt-[20px] max-[1024px]:text-[1.125rem]' title='Watch Now' 
-                            value={data.results[dataIndex].episodeId}>
+                            <Link to={`/Watch/${data.results[dataIndex].id}/${data.results[dataIndex].episodeId}`} className='rounded-lg ease-in-out duration-300 text-white-100 text-[1.75rem] font-bold bg-orange flex items-center py-[10px] px-[24px] gap-3 hover:bg-orange-800 mt-[60px] w-fit order-4
+                            max-[1024px]:mt-[20px] max-[1024px]:text-[1.125rem]' title='Watch Now'>
                                 <FaPlay />
                                 WATCH NOW
-                            </button>
+                            </Link>
                         </section>
                         <section className='h-[540px] w-full relative max-[1024px]:absolute max-[1024px]:z-[-1]'>
                             <img src={data.results[dataIndex].image} alt={data.results[dataIndex].image}
