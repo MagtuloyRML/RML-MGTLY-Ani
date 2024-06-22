@@ -39,7 +39,7 @@ const SideBar = () => {
                         <li>
                             09XX-XXX-XXXX
                         </li>
-                        <li>
+                        <li className='mt-[55px]'>
                             <SocialLinks />
                         </li>
                     </ul>

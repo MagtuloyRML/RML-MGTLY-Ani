@@ -18,6 +18,7 @@ export default {
       'orange-900': '#6B2A00',
       'orange': '#FD6F00',
       'white-100': '#FFFFFF',
+      'white-50': '#E2E2E2',
       'black-50': '#E6E6E6',
       'black-100': '#B0B0B0',
       'black-200': '#8A8A8A',

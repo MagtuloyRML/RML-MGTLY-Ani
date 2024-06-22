@@ -17,18 +17,22 @@ const Watch = () => {
             <section className='w-full h-full mt-[59px] px-[10%] max-[1024px]:px-[5%] max-[768px]:px-3 flex flex-col text-black-300 gap-2'>
                 <p className=''>{`Watch - ${params.id} - ${params.episodeId}`}</p>
                 <section className='w-full h-full flex gap-3 max-[1024px]:flex-col'>
-                    <section className='aspect-video w-full h-full'>
+                    <section className='aspect-video w-full h-full gap-2 flex flex-col'>
                         <WatchEpisodeContext.Provider value={episode}>
                             <Video episode={episode} />
                         </WatchEpisodeContext.Provider>
                     </section>
-                    <section className='w-full max-w-[420px] max-[1024px]:max-w-full h-full overflow-y-auto grid gap-2 grid-cols-8 grid-rows-[50px] grid-flow-dense'>
+                    <div className='w-full max-w-[420px] max-[1024px]:max-w-full h-full flex flex-col gap-2'>
+                        <h3 className='font-medium text-[1.25rem]'>Episodes:</h3>
+                        <section className='w-full max-w-[420px] max-[1024px]:max-w-full h-full overflow-y-auto grid gap-2 grid-cols-8 max-[480px]:grid-cols-6 grid-rows-[50px] grid-flow-dense'>
                         {data.episodes.map((episode, index) => (
                             <Link to={`/Watch/${params.id}/${episode.id}`} key={index} className={`${params.episodeId === episode.id ? 'bg-orange' : 'bg-black-300'} h-[50px] flex justify-center items-center font-semibold text-white-100 rounded-md hover:bg-orange ease-in-out duration-300`}>
                                 {episode.number}
                             </Link>
                         ))}
-                    </section>
+                        </section>
+                    </div>
+                    
                 </section>
                 
                 <article className='w-full h-full flex gap-6'>
@@ -58,11 +62,11 @@ const Watch = () => {
                             : data.description}
                             {
                             data.description.length >= 275 ? 
-                            <a className='text-orange font-medium px-2 cursor-pointer' onClick={() => setShowAllDescription(!showAllDescription)}>
+                            <span className='text-orange font-medium px-2 cursor-pointer' onClick={() => setShowAllDescription(!showAllDescription)}>
                                 {!showAllDescription ?
                                     'See More...'
                                 : 'See Less'}
-                            </a>
+                            </span>
                             :
                             <>
                             </>

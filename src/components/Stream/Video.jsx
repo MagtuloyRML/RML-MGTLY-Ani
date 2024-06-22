@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { WatchEpisodeContext } from '../../context/Episode/WatchEpisodeContext'
+import { FaSpinner } from "react-icons/fa";
 import useFetch from '../Function/useFetch';
 import VideoJS from './VideoJS';
 
@@ -8,10 +9,10 @@ const Video = () => {
     const {data, error, loading} = useFetch(`/watch/${episode}`);
     const [source, setSource] = useState([]);
     const [toPlay, setToPlay] = useState({});
-    /* console.log(data);  */   
+    
     useEffect(() => {
         setSource(
-            data && !loading  ? 
+            data? 
             data.sources.map((video) => ({
                 src: video.url,
                 type: 'application/x-mpegURL',
@@ -20,7 +21,7 @@ const Video = () => {
             : null
         );
         source ? 
-            useSource('default')
+            useSource('360p')
         : null
     }, [data]);
 
@@ -29,8 +30,13 @@ const Video = () => {
             source.filter((url) => {
                 return url.label === resolution;
             }
-        ))
+        ));
     };
+
+    const changeSource = (event) => {
+        const value = event.target.value;
+        useSource(value);
+    }
 
     const playerRef = useRef(null);
 
@@ -56,29 +62,35 @@ const Video = () => {
 
     return (
         <>
-            {data && !loading  ? 
+            {data ? 
                 <>
                     <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
                 </>
             : 
             <>
-                <div className='w-full h-full aspect-video bg-black-300 rounded-lg'>
-
+                <div className='w-full h-full aspect-video bg-black-100 rounded-lg flex items-center justify-center'>
+                    <FaSpinner className='animate-spin text-[2rem]'/>
                 </div>
             </>
             }
-            <label htmlFor="resolution">Resolution: </label>
-            <select name="resolution" id="resolution">
-                {
-                    data && !loading  ? 
-                    data.sources.map((video) => (
-                        <option onSelect={() => useSource(video.quality)}>
-                            {video.quality}
+            <div>
+                <label htmlFor="resolution">Resolution: </label>
+                <select name="resolution" id="resolution" onChange={changeSource}>
+                    {
+                        data ? 
+                        data.sources.map((video, index) => (
+                            <option value={video.quality} key={index}>
+                                {video.quality}
+                            </option>
+                        ))
+                        : 
+                        <option selected value=''>
+                            <FaSpinner className='animate-spin text-[2rem]'/>
                         </option>
-                    ))
-                    : null
-                }
-            </select>
+                    }
+                </select>
+            </div>
+            
         </>
     )
 }

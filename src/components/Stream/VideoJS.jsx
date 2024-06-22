@@ -15,6 +15,7 @@ const VideoJS = (props) => {
           videoRef.current.appendChild(videoElement);
     
           const player = playerRef.current = videojs(videoElement, options, () => {
+            videojs.log('player is ready');
             onReady && onReady(player);
           });
         } else {
@@ -35,6 +36,7 @@ const VideoJS = (props) => {
           }
         };
     }, [playerRef]);
+    
     return (
         <div data-vjs-player>
             <div ref={videoRef} />
