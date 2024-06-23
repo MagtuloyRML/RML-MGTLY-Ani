@@ -3,6 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import SideBar from './SideBar';
 import { SidebarContext } from '../../context/Sidebar/SidebarContext';
 import { LogoButton, MenuButton } from './NavigationButton';
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
     const [isShow, setIsShow] = useState(false);
@@ -25,14 +26,7 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <ul className='w-full flex flex-row justify-end items-center gap-5'>
-                    <li className='w-full h-[35px] max-w-[350px] rounded-md bg-black-50 p-2 flex items-center gap-3'>
-                        <input className='bg-black-50 w-full text-black-300 text-[1rem]
-                        focus:outline-none 
-                        max-[768px]:text-[.85rem]' type="text" placeholder='Search Anime' />
-                        <button className='flex-none bg-transparent text-black-300 hover:text-orange' title='Search'>
-                            <FaSearch />
-                        </button>
-                    </li>
+                    <SearchBar />
                     <li className='hidden max-[768px]:block'>
                         <button className='flex flex-col gap-[2px] bg-transparent h-[16px] w-[1.5rem] group' id='forSideBar' title='Menu' 
                             onClick={() => showSideBar()} >

@@ -14,7 +14,6 @@ const Footer = () => {
                 <li><LogoButton /></li>
                 <li>RML MGTLY</li>
                 <li>emagtuloy.comm@gmail.com</li>
-                <li>09XX-XXX-XXXX</li>
                 <li className='mt-[55px] max-[600px]:mt-[21px]'><SocialLinks /></li>
               </ul>
             </li>

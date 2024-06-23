@@ -24,7 +24,11 @@ const router = createBrowserRouter([
       {
         path: '/Watch/:id/:episodeId',
         element: <Watch />,
-    },
+      },
+      {
+        path: '/Watch/:search/:searchPage',
+        element: <Search />,
+      },
     ],
     errorElement : <div>404 Not Found</div>
   },
