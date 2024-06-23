@@ -5,8 +5,6 @@ import GetAnime from '../Function/GetAnime'
 
 const GetSeries = ({titleTab, url, type}) => {
     const {data, error, loading} = useFetch(url);
-    data ? console.log(data) : null;
-
     return (
         <>
             <section className='mt-[30px] pt-2 px-[10%] max-[1024px]:px-[5%] max-[768px]:px-3 text-black-300'>

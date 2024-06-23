@@ -1,32 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import useFetch from '../Function/useFetch';
 import useTruncate from '../Function/useTruncate';
 import { WatchEpisodeContext } from '../../context/Episode/WatchEpisodeContext';
 import Video from './Video';
+import GetSeries from '../Home/GetSeries';
 
 const Watch = () => {
     const params = useParams();
     const {data, error, loading} = useFetch(`/info/${params.id}`);
     const [episode, setEpisode] = useState(params.episodeId)
     const [showAllDescription, setShowAllDescription] = useState(false);
+    
+    const changeEpisode = (id) => {
+        setEpisode(id);
+    };
+
     return (
         <>
             {data ? 
             <>
-                <section className='w-full h-full pt-2 mt-[59px] px-[10%] max-[1024px]:px-[5%] max-[768px]:px-3 flex flex-col text-black-300 gap-2'>
-                    <p className=''>{`Watch - ${params.id} - ${params.episodeId}`}</p>
+                <section className='w-full h-full pt-2 mt-[59px] px-[10%] max-[1024px]:px-[5%] max-[768px]:px-3 flex flex-col text-black-300 gap-5'>
+                    <p >{`Watch / ${params.episodeId}`}</p>
                     <section className='w-full h-full flex gap-3 max-[1024px]:flex-col'>
                         <section className='aspect-video w-full h-full gap-2 flex flex-col'>
                             <WatchEpisodeContext.Provider value={episode}>
                                 <Video episode={episode} />
                             </WatchEpisodeContext.Provider>
                         </section>
-                        <div className='w-full max-w-[420px] max-[1024px]:max-w-full h-full max-h-[365px] flex flex-col gap-2'>
+                        <div className='w-full max-w-[420px] max-[1024px]:max-w-full flex flex-col gap-2'>
                             <h3 className='font-medium text-[1.25rem]'>Episodes:</h3>
-                            <section className='w-full max-w-[420px] max-[1024px]:max-w-full overflow-x-hidden grid gap-2 p-2 grid-cols-7 max-[480px]:grid-cols-5 grid-rows-[50px] grid-flow-dense scrollbar-thin scrollbar-webkit'>
+                            <section className='w-full max-w-[420px] max-[1024px]:max-w-full overflow-x-hidden grid gap-2 p-2 grid-cols-7 max-[480px]:grid-cols-5 grid-rows-[50px] grid-flow-dense scrollbar-thin scrollbar-webkit h-full max-h-[365px] max-[1024px]:max-h-[150px]'>
                             {data.episodes.map((episode, index) => (
-                                <Link to={`/Watch/${params.id}/${episode.id}`} key={index} className={`${params.episodeId === episode.id ? 'bg-orange hover:bg-orange-800' : 'bg-black-300 hover:bg-orange'} h-[50px] flex justify-center items-center font-semibold text-white-100 rounded-md ease-in-out duration-300`} >
+                                <Link onClick={() => changeEpisode(episode.id)} to={`/Watch/${params.id}/${episode.id}`} key={index} className={`${params.episodeId === episode.id ? 'bg-orange hover:bg-orange-800' : 'bg-black-300 hover:bg-orange'} h-[50px] flex justify-center items-center font-semibold text-white-100 rounded-md ease-in-out duration-300`} >
                                     {episode.number}
                                 </Link>
                             ))}
@@ -49,7 +55,7 @@ const Watch = () => {
                             <h4 className='font-medium text-[1rem]'>
                                 Category:
                             </h4>
-                            <ul className='flex gap-2'>
+                            <ul className='flex gap-2 flex-wrap'>
                                 {data.genres.map((genre, index) => 
                                 <li key={index}>
                                     <p>{genre}</p>
@@ -79,7 +85,9 @@ const Watch = () => {
             </> : 
             <div className='min-h-[100vh]'>
             </div>
-            }    
+            }
+
+            <GetSeries titleTab='Anime You May Like' url='/popular?page=1' type='get'/>   
         </>
     )
 }

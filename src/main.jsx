@@ -7,6 +7,7 @@ import AboutUs from './components/AboutUs/AboutUs.jsx'
 import Search from './components/Search/Search.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Watch from './components/Stream/Watch.jsx'
+import PageNotFound from './components/PageNotFound/PageNotFound.jsx'
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
         element: <Search />,
       },
     ],
-    errorElement : <div>404 Not Found</div>
+    errorElement : <PageNotFound />
   },
 ]);
 

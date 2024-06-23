@@ -28,7 +28,6 @@ const VideoJS = (props) => {
 
     useEffect(() => {
         const player = playerRef.current;
-    
         return () => {
           if (player && !player.isDisposed()) {
             player.dispose();

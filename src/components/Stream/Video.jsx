@@ -23,7 +23,7 @@ const Video = () => {
         source ? 
             useSource('360p')
         : null
-    }, [data]);
+    }, [data, episode]);
 
     const useSource = (resolution) => {
         setToPlay(
@@ -84,7 +84,7 @@ const Video = () => {
                             </option>
                         ))
                         : 
-                        <option selected value=''>
+                        <option defaultValue value=''>
                             <FaSpinner className='animate-spin text-[2rem]'/>
                         </option>
                     }
