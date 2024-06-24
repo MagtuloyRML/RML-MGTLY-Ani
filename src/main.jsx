@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <Watch />,
       },
       {
-        path: '/Watch/:search/:searchPage',
+        path: '/Search/:search/:searchPage',
         element: <Search />,
       },
     ],

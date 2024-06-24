@@ -1,7 +1,7 @@
 import React from 'react'
 import './Scrollbar.css'
 import useFetch from '../Function/useFetch'
-import GetAnime from '../Function/GetAnime'
+import { GetAnime } from '../Function/GetAnime'
 
 const GetSeries = ({titleTab, url, type}) => {
     const {data, error, loading} = useFetch(url);

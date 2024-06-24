@@ -21,9 +21,6 @@ const Footer = () => {
               <Link to='/' className='font-medium hover:text-orange w-full'>
                 Home
               </Link>
-              <Link to='/' className='font-medium hover:text-orange w-full'>
-                Genre
-              </Link>
               <Link to='/AboutUs' className='font-medium hover:text-orange w-full'>
                 About Us
             </Link>
