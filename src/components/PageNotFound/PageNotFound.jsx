@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer'
 import { TbFaceIdError } from "react-icons/tb";
 import { Link } from 'react-router-dom';
 
-const PageNotFound = () => {
+export const PageNotFound = () => {
   return (
     <>
         <Navbar />
@@ -21,5 +21,3 @@ const PageNotFound = () => {
     </>
   )
 }
-
-export default PageNotFound

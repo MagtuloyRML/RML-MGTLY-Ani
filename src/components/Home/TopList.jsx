@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { FaPlay } from "react-icons/fa";
 import useFetch from '../Function/useFetch';
 import useTruncate from '../Function/useTruncate';
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { FaChevronRight, FaChevronLeft, FaSpinner } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const TopList = () => {
@@ -78,6 +78,9 @@ const TopList = () => {
                 </>
                 : 
                 <>
+                    <div className='h-[450px] w-full flex items-center justify-center text-black-300'>
+                        <FaSpinner className='animate-spin text-[4rem]'/>
+                    </div>
                 </>
             }
         </>

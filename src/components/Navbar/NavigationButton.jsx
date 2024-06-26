@@ -18,6 +18,9 @@ export const MenuButton = () => {
         <Link to='/' className='font-medium hover:text-orange w-full'>
             Home
         </Link>
+        <Link to='/Search' className='font-medium hover:text-orange w-full'>
+            Search
+        </Link>
         <Link to='/AboutUs' className='font-medium hover:text-orange w-full'>
             About Us
         </Link>

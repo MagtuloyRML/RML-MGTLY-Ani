@@ -24,7 +24,7 @@ const VideoJS = (props) => {
           player.autoplay(options.autoplay);
           player.src(options.sources);
         }
-    }, [options, videoRef]);
+    }, [onReady, options, videoRef]);
 
     useEffect(() => {
         const player = playerRef.current;

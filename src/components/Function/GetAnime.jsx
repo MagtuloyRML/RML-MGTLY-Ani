@@ -42,7 +42,7 @@ export const GetSearchAnime = () => {
            {
             data.map((anime, index) => (
                 <li key={index} className='border-2 border-white-100 bg-white-100 w-fit min-w-[200px] max-[1024px]:min-w-[140px] max-[768px]:min-w-[100px] hover:text-orange ease-in-out duration-300 rounded-md overflow-hidden hover:scale-110'>
-                    <Link to={`/Watch/${anime.id}/${anime.id+'-episode-1'}`}>
+                    <Link to={`/Watch/${anime.id}/${anime.id+'-episode-1'}`} title={anime.title}>
                         <img className='w-[200px] min-w-[200px] h-[290px] rounded-md max-[1024px]:min-w-[140px] max-[768px]:w-[100px] max-[1024px]:h-[285px] max-[768px]:h-[185px]' src={anime.image} alt="" />
                         <h4 className='font-medium text-[1rem] max-[1024px]:text-[.85rem] max-[768px]:text-[.7rem]'>
                             {useTruncate(anime.title, 23)}

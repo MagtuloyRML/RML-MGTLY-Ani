@@ -12,6 +12,7 @@ const useFetch = (url) => {
         try {
             setIsLoading(true);
             const result = await axios.get(`${domain}${urlInput}`);
+            await setTimeout(1000);
             setData(result.data);
         } catch (err) {
             setError(err.message);

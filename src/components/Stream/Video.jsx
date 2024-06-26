@@ -45,6 +45,7 @@ const Video = () => {
         controls: true,
         responsive: true,
         fluid: true,
+        loop: true,
         sources: [
             toPlay
         ]
@@ -62,7 +63,7 @@ const Video = () => {
 
     return (
         <>
-            {data ? 
+            {source ? 
                 <>
                     <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
                 </>
