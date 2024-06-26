@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import useFetch from '../Function/useFetch';
 import { AnimeInfoContext, WatchEpisodeContext } from '../../context/Episode/WatchEpisodeContext';
-import Video from './Video';
 import GetSeries from '../Home/GetSeries';
 import AnimeInfo from './AnimeInfo';
 import { LoadingContent } from '../Function/LoadingContent';
+import Video from './Vid';
 
 const Watch = () => {
     const params = useParams();
     const {data, error, loading} = useFetch(`/info/${params.id}`);
-    const [episode, setEpisode] = useState(params.episodeId)
+    const [episode, setEpisode] = useState(params.episodeId);
     
     const changeEpisode = (id) => {
         setEpisode(id);
@@ -23,8 +23,8 @@ const Watch = () => {
                 <section className='w-full h-full pt-2 mt-[59px] px-[10%] max-[1024px]:px-[5%] max-[768px]:px-3 flex flex-col text-black-300 gap-5'>
                     <p >{`Watch / ${params.episodeId}`}</p>
                     
-                    <section className='w-full h-full flex gap-3 max-[1024px]:flex-col'>
-                        <section className='aspect-video w-full h-full gap-2 flex flex-col'>
+                    <section className='w-full h-full flex gap-3 max-[1024px]:flex-col items-center'>
+                        <section className='w-full h-full gap-2 flex flex-col'>
                             <WatchEpisodeContext.Provider value={episode}>
                                 <Video episode={episode} />
                             </WatchEpisodeContext.Provider>
