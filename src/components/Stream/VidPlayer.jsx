@@ -9,10 +9,10 @@ const VideoPlayer = ({ sources }) => {
     useEffect(() => {
         // Initialize video.js player
         setPlayer(videojs(videoRef.current, {
-        autoplay: true,
-        controls: true,
-        responsive: true,
-        sources: sources,
+            autoplay: true,
+            controls: true,
+            responsive: true,
+            sources: sources,
         }));
 
         return () => {
@@ -22,9 +22,16 @@ const VideoPlayer = ({ sources }) => {
         };
     }, [sources]);
 
+    /* useEffect(() => {
+        // Update video source when `src` prop changes
+        if (player) {
+          player.src(sources);
+        }
+      }, [sources]); */
+
     return (
-        <div data-vjs-player className='w-full h-full aspect-video'>
-            <video ref={videoRef} className="video-js vjs-default-skin w-full"></video>
+        <div data-vjs-player>
+            <video ref={videoRef} className="video-js vjs-default-skin w-full h-full min-h-[405px]"></video>
         </div>
     );
 };

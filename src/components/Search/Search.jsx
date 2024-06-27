@@ -5,13 +5,12 @@ import { GetSearchListContext } from '../../context/Search/SearchContext';
 import { GetSearchAnime } from '../Function/GetAnime';
 import { FaCaretSquareLeft, FaCaretSquareRight } from "react-icons/fa";
 import { NoResultFound } from './NoResultFound';
-import { LoadingContent } from '../Function/LoadingContent';
+import { LoadingContent, StartUp } from '../Function/LoadingContent';
 
 
 const Search = () => {
   const params = useParams();
   const {data, error, loading} = useFetch(`/${params.search}?page=${params.searchPage}`);
-  console.log(data);
 
   return (
     <section className='mt-[59px] min-h-[100vh] pt-2 px-[10%] max-[1024px]:px-[5%] max-[768px]:px-3 text-black-300 flex flex-col gap-2 items-center'>
@@ -78,11 +77,11 @@ const Search = () => {
             </>
           :  loading ? 
           <>
-            <LoadingContent />
+            <StartUp />
           </>
           : 
           <>
-            <LoadingContent />
+            <StartUp />
           </>
         }   
         
