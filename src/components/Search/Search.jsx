@@ -6,7 +6,7 @@ import { GetSearchAnime } from '../Function/GetAnime';
 import { FaCaretSquareLeft, FaCaretSquareRight } from "react-icons/fa";
 import { NoResultFound } from './NoResultFound';
 import { StartUp } from '../Function/LoadingContent';
-
+import { PageError } from '../PageNotFound/PageError';
 
 const Search = () => {
   const params = useParams();
@@ -84,7 +84,9 @@ const Search = () => {
           <>
             <StartUp />
           </>
-          : 
+          :   error ?
+            <PageError />
+          :
           <>
             <StartUp />
           </>

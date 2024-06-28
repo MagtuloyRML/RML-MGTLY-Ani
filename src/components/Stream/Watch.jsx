@@ -8,6 +8,7 @@ import AnimeInfo from './AnimeInfo';
 import { StartUp } from '../Function/LoadingContent';
 import Video from './Vid';
 import useFetchSrc from '../Function/useFetchSrc';
+import { PageError } from '../PageNotFound/PageError';
 
 const Watch = () => {
     const params = useParams();
@@ -29,7 +30,7 @@ const Watch = () => {
                                 </WatchEpisodeContext.Provider>
                             : dataError ?
                                 <>
-
+                                    <PageError />
                                 </>
                             :
                                 <>
@@ -59,7 +60,10 @@ const Watch = () => {
             </> : 
             loading ?
                 <StartUp />
-            : 
+            :
+            error ?
+                <PageError />
+            :
                 <StartUp />
             }
 

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { FaPlay } from "react-icons/fa";
 import useFetch from '../Function/useFetch';
 import useTruncate from '../Function/useTruncate';
-import { FaChevronRight, FaChevronLeft, FaSpinner } from "react-icons/fa";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { StartUp } from '../Function/LoadingContent';
+import { PageError } from '../PageNotFound/PageError';
 
 const TopList = () => {
     const { data, isLoading, error } = useFetch('/top-airing');
@@ -77,7 +78,10 @@ const TopList = () => {
                         <span className="sr-only">Next</span>
                     </button>
                 </>
-                : 
+                :
+                error ?
+                    <PageError />
+                :
                 <>
                     <StartUp />
                 </>
