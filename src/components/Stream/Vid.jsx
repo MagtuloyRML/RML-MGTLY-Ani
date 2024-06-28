@@ -4,8 +4,6 @@ import { WatchEpisodeContext } from '../../context/Episode/WatchEpisodeContext';
 
 const Video = () => {
     const episode = useContext(WatchEpisodeContext);
-    console.log(episode);
-
     return (
         <div className='w-full h-full'>
             <VideoPlayer sources={episode} />
