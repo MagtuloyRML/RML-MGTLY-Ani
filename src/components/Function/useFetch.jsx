@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 
-const domain = 'http://localhost:3000/anime/gogoanime'
+const domain = 'https://consumet-api-unwi.onrender.com/anime/gogoanime'
 
 const useFetch = (url) => {
     const [data, setData] = useState(null);
