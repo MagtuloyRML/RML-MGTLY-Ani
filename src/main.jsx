@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+const App = lazy(() => import('./App.jsx'));
 import './index.css'
-import Home from './components/Home/Home.jsx'
-import AboutUs from './components/AboutUs/AboutUs.jsx'
-import Search from './components/Search/Search.jsx'
+const Home = lazy(() => import('./components/Home/Home.jsx'));
+const AboutUs = lazy(() => import('./components/AboutUs/AboutUs.jsx'));
+const Search = lazy(() => import('./components/Search/Search.jsx'));
+const Watch = lazy(() => import('./components/Stream/Watch.jsx'));
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Watch from './components/Stream/Watch.jsx'
 import { PageNotFound } from './components/PageNotFound/PageNotFound.jsx'
 import { StartSearching } from './components/Search/NoResultFound.jsx'
+import { StartUp } from './components/Function/LoadingContent.jsx'
 
 const router = createBrowserRouter([
   {
@@ -42,8 +43,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
+    <Suspense fallback={<StartUp />} >
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
+    </Suspense>
   </React.StrictMode>,
 )

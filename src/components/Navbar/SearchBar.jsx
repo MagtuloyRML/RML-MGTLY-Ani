@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,8 @@ const SearchBar = () => {
     const search = searchRef.current.value;
     search === '' ? 
     searchRef.current.focus()
-    : navigate(`/Search/${search}/1`)
+    :( navigate(`/Search/${search}/1`, { replace: true }) ,
+      window.location.reload() )
   };
   return (
     <>

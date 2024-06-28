@@ -20,7 +20,7 @@ const Search = () => {
             data.results.length > 0 ?
             <>
               <p>Page: {data.currentPage}</p>
-              <div className='flex justify-between w-full h-8 max-w-[768px] text-[1.75rem] justify-self-center'>
+              <div className='flex justify-between w-full h-8 text-[1.75rem] justify-self-center'>
                 {
                   parseInt(data.currentPage) <= 1 ?
                   <div>
@@ -42,13 +42,14 @@ const Search = () => {
                 }
                 
               </div>
-              <ul className='flex flex-wrap gap-2 w-full h-full items-center justify-center'>
+              <ul className='flex min-h-[70vh] flex-wrap gap-2 w-full h-full justify-evenly'>
                   <GetSearchListContext.Provider value={data.results}>
                     <GetSearchAnime data={data} />
                   </GetSearchListContext.Provider>
               </ul>
-              
-              <div className='mt-2 flex justify-between w-full h-8 max-w-[768px] text-[1.75rem] justify-self-center'>
+              {
+                data.results.length > 4 ?
+                <div className='mt-2 flex justify-between w-full h-8 text-[1.75rem] justify-self-end '>
                 {
                   parseInt(data.currentPage) <= 1 ?
                   <div className='w-[28px]'>
@@ -70,6 +71,10 @@ const Search = () => {
                 }
                 
               </div>
+                :
+                <></>
+              }
+              
             </>
             : 
             <> 
