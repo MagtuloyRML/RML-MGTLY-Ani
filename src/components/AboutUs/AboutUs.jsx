@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../../assets/logobig.svg'
+import SocialLinks from '../SocialLinks/SocialLinks'
 
 const AboutUs = () => {
   return (
@@ -12,12 +13,19 @@ const AboutUs = () => {
         <span className='font-bold text-orange'>RML MGTLY's ANI</span> was an Anime Streaming Site where able to watch any <span className='font-bold text-orange'>Top Airing</span>, <span className='font-boldtext-orange'>Popular</span>, or <span className='font-bold text-orange'>whatever they like anime</span> to watch. Creating as my <span className='font-bold text-orange'>Personal Hobby</span> of <span className='font-bold text-orange'>Dedicated anime watcher</span> and loving any <span className='font-bold text-orange'>Art Style</span> showcasing in each series and showcasing skill in terms of programming specially as an <span className='font-bold text-orange'>Aspiring Front-End Developer.</span>
         <br/>
         <br/>
-        <span className='font-bold text-orange'>RML MGTLY's ANI</span> was an Anime Streaming Site created only to showcase the skills in front-end development in using <span className='font-bold text-orange'>React.JS Framework</span> and <span className='font-bold text-orange'>Tailwinds.CSS</span>, and working in <span className='font-bold text-orange'>Public API (Consumet API Anime)</span>, and <span className='font-bold text-orange'>other tools for studying and develop this website.</span> And this Website was created for <span className='font-bold text-orange'>Personal Project Only and Educational Proposes only and not intended for Piracy.</span>
+        <span className='font-bold text-orange'>RML MGTLY's ANI</span> was an Anime Streaming Site created only to showcase the skills in front-end development in using <span className='font-bold text-orange'>React.JS Framework</span> and <span className='font-bold text-orange'>Tailwinds.CSS</span>, and working with using of <span className='font-bold text-orange'>Public API (Consumet API Anime)</span>, and <span className='font-bold text-orange'>other tools for studying and develop this website.</span> And this Website was created for <span className='font-bold text-orange'>Personal Project Only and Educational Proposes only and not intended for Piracy.</span>
       </p>
 
       <p className='font-bold text-orange text-center text-[1.25rem] max-[768px]:text-[.875rem]'>
         Thank you for the time of Visiting my Site and Have a Nice Day!
       </p>
+
+      <div>
+        <p className='font-bold text-orange text-center text-[1.25rem] max-[768px]:text-[.875rem] pb-2'>
+          Visit Our Socials
+        </p>
+        <SocialLinks/>
+      </div>
       
     </section>
   )

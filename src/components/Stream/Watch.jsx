@@ -5,7 +5,7 @@ import useFetch from '../Function/useFetch';
 import { AnimeInfoContext, WatchEpisodeContext } from '../../context/Episode/WatchEpisodeContext';
 import GetSeries from '../Home/GetSeries';
 import AnimeInfo from './AnimeInfo';
-import { LoadingContent, StartUp } from '../Function/LoadingContent';
+import { StartUp } from '../Function/LoadingContent';
 import Video from './Vid';
 import useFetchSrc from '../Function/useFetchSrc';
 

@@ -5,7 +5,7 @@ import { GetSearchListContext } from '../../context/Search/SearchContext';
 import { GetSearchAnime } from '../Function/GetAnime';
 import { FaCaretSquareLeft, FaCaretSquareRight } from "react-icons/fa";
 import { NoResultFound } from './NoResultFound';
-import { LoadingContent, StartUp } from '../Function/LoadingContent';
+import { StartUp } from '../Function/LoadingContent';
 
 
 const Search = () => {

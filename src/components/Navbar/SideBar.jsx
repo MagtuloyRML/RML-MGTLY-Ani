@@ -36,9 +36,6 @@ const SideBar = () => {
                         <li>
                             emagtuloy.comm@gmail.com
                         </li>
-                        <li>
-                            09XX-XXX-XXXX
-                        </li>
                         <li className='mt-[55px]'>
                             <SocialLinks />
                         </li>

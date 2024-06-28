@@ -4,6 +4,7 @@ import useFetch from '../Function/useFetch';
 import useTruncate from '../Function/useTruncate';
 import { FaChevronRight, FaChevronLeft, FaSpinner } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { StartUp } from '../Function/LoadingContent';
 
 const TopList = () => {
     const { data, isLoading, error } = useFetch('/top-airing');
@@ -78,9 +79,7 @@ const TopList = () => {
                 </>
                 : 
                 <>
-                    <div className='h-[450px] w-full flex items-center justify-center text-black-300'>
-                        <FaSpinner className='animate-spin text-[4rem]'/>
-                    </div>
+                    <StartUp />
                 </>
             }
         </>
