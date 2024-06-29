@@ -17,7 +17,7 @@ You can also consider to visit my Social Sites
 - [My Portfolio](https://magtuloyrml.github.io/)
 - [Github](https://github.com/MagtuloyRML)
 - [LinkedIn](https://www.linkedin.com/in/rmlmgtly/)
-- [Behance](h[ttps://www.behance.net/rmlmgtly)
+- [Behance](https://www.behance.net/rmlmgtly)
 - [Instagram](https://www.instagram.com/drw.w.rml/)
 - [Twitter / X](https://twitter.com/Drw_w_Rml)
 
