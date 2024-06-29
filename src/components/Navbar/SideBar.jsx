@@ -18,13 +18,13 @@ const SideBar = () => {
                     </button>
                 </li>
                 <li className='flex flex-col gap-[35px]'>
-                    <Link onClick={showSideBar} to='/' className='font-medium hover:text-orange w-full'>
+                    <Link onClick={showSideBar} to='/RML-MGTLY-Ani/' className='font-medium hover:text-orange w-full'>
                         Home
                     </Link>
-                    <Link onClick={showSideBar} to='/Search' className='font-medium hover:text-orange w-full'>
+                    <Link onClick={showSideBar} to='/RML-MGTLY-Ani/Search' className='font-medium hover:text-orange w-full'>
                         Search
                     </Link>
-                    <Link onClick={showSideBar} to='/AboutUs' className='font-medium hover:text-orange w-full'>
+                    <Link onClick={showSideBar} to='/RML-MGTLY-Ani/AboutUs' className='font-medium hover:text-orange w-full'>
                         About Us
                     </Link>
                 </li>

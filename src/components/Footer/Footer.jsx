@@ -18,13 +18,13 @@ const Footer = () => {
               </ul>
             </li>
             <li className='flex flex-col gap-[17px] w-full items-center justify-center'>
-              <Link to='/' className='font-medium hover:text-orange w-full'>
+              <Link to='/RML-MGTLY-Ani/' className='font-medium hover:text-orange w-full'>
                 Home
               </Link>
-              <Link to='/Search' className='font-medium hover:text-orange w-full'>
+              <Link to='/RML-MGTLY-Ani/Search' className='font-medium hover:text-orange w-full'>
                 Search
               </Link>
-              <Link to='/AboutUs' className='font-medium hover:text-orange w-full'>
+              <Link to='/RML-MGTLY-Ani/AboutUs' className='font-medium hover:text-orange w-full'>
                 About Us
               </Link>
             </li>

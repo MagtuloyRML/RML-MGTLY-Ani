@@ -13,27 +13,27 @@ import { StartUp } from './components/Function/LoadingContent.jsx'
 
 const router = createBrowserRouter([
   {
-    path : '/',
+    path : '/RML-MGTLY-Ani/',
     element : <App />,
     children: [
       {
-          path: '/',
+          path: '/RML-MGTLY-Ani/',
           element: <Home />,
       },
       {
-          path: '/AboutUs',
+          path: '/RML-MGTLY-Ani/AboutUs',
           element: <AboutUs />,
       },
       {
-        path: '/Watch/:id/:episodeId',
+        path: '/RML-MGTLY-Ani/Watch/:id/:episodeId',
         element: <Watch />,
       },
       {
-        path: '/Search/:search/:searchPage',
+        path: '/RML-MGTLY-Ani/Search/:search/:searchPage',
         element: <Search />,
       },
       {
-        path: '/Search',
+        path: '/RML-MGTLY-Ani/Search',
         element: <StartSearching />,
       },
     ],

@@ -11,7 +11,7 @@ const SearchBar = () => {
     const search = searchRef.current.value;
     search === '' ? 
     searchRef.current.focus()
-    :( navigate(`/Search/${search}/1`, { replace: true }) ,
+    :( navigate(`/RML-MGTLY-Ani/Search/${search}/1`, { replace: true }) ,
       window.location.reload() )
   };
   return (

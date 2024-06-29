@@ -44,7 +44,7 @@ const Watch = () => {
                             <h3 className='font-medium text-[1.25rem]'>Episodes:</h3>
                             <section className='w-full max-w-[420px] max-[1024px]:max-w-full overflow-x-hidden flex flex-wrap  gap-2 scrollbar-thin scrollbar-webkit h-full max-h-[365px] max-[1024px]:max-h-[150px]'>
                             {data.episodes.map((episode, index) => (
-                                <Link reloadDocument to={`/Watch/${params.id}/${episode.id}`} key={index} className={`${params.episodeId === episode.id ? 'bg-orange hover:bg-orange-800' : 'bg-black-300 hover:bg-orange'} w-full max-w-[55px] h-[50px] flex justify-center items-center font-semibold text-white-100 rounded-md ease-in-out duration-300`} >
+                                <Link reloadDocument to={`/RML-MGTLY-Ani/Watch/${params.id}/${episode.id}`} key={index} className={`${params.episodeId === episode.id ? 'bg-orange hover:bg-orange-800' : 'bg-black-300 hover:bg-orange'} w-full max-w-[55px] h-[50px] flex justify-center items-center font-semibold text-white-100 rounded-md ease-in-out duration-300`} >
                                     {episode.number}
                                 </Link>
                             ))}

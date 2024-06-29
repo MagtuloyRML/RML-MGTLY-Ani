@@ -26,13 +26,13 @@ const Search = () => {
                   <div>
                   </div>
                   :
-                    <Link className='hover:text-orange ease-in-out duration-300 hover:scale-110' title='Previous' to={`/Search/${params.search}/${parseInt(data.currentPage)-1}`}>
+                    <Link className='hover:text-orange ease-in-out duration-300 hover:scale-110' title='Previous' to={`/RML-MGTLY-Ani/Search/${params.search}/${parseInt(data.currentPage)-1}`}>
                       <FaCaretSquareLeft />
                     </Link>
                 }
                 {
                   data.hasNextPage ?
-                    <Link className='hover:text-orange ease-in-out duration-300 hover:scale-110' title='Next' to={`/Search/${params.search}/${parseInt(data.currentPage)+1}`}>
+                    <Link className='hover:text-orange ease-in-out duration-300 hover:scale-110' title='Next' to={`/RML-MGTLY-Ani/Search/${params.search}/${parseInt(data.currentPage)+1}`}>
                       <FaCaretSquareRight />
                     </Link>
                   :
@@ -55,14 +55,14 @@ const Search = () => {
                   <div className='w-[28px]'>
                   </div>
                   :
-                    <Link className='hover:text-orange ease-in-out duration-300 hover:scale-110' title='Previous' to={`/Search/${params.search}/${parseInt(data.currentPage)-1}`}>
+                    <Link className='hover:text-orange ease-in-out duration-300 hover:scale-110' title='Previous' to={`/RML-MGTLY-Ani/Search/${params.search}/${parseInt(data.currentPage)-1}`}>
                       <FaCaretSquareLeft />
                     </Link>
                 }
                   <p className='text-[1rem]'>Page: {data.currentPage}</p>
                 {
                   data.hasNextPage ?
-                    <Link className='hover:text-orange ease-in-out duration-300 hover:scale-110' title='Next' to={`/Search/${params.search}/${parseInt(data.currentPage)+1}`}>
+                    <Link className='hover:text-orange ease-in-out duration-300 hover:scale-110' title='Next' to={`/RML-MGTLY-Ani/Search/${params.search}/${parseInt(data.currentPage)+1}`}>
                       <FaCaretSquareRight />
                     </Link>
                   :

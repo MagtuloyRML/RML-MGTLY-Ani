@@ -56,7 +56,7 @@ const TopList = () => {
                                     </li>
                                 )}
                             </ul>
-                            <Link to={`/Watch/${data.results[dataIndex].id}/${data.results[dataIndex].episodeId}`} className='rounded-lg ease-in-out duration-300 text-white-100 text-[1.75rem] font-bold bg-orange flex items-center py-[10px] px-[24px] gap-3 hover:bg-orange-800 mt-[60px] w-fit order-4
+                            <Link to={`/RML-MGTLY-Ani/Watch/${data.results[dataIndex].id}/${data.results[dataIndex].episodeId}`} className='rounded-lg ease-in-out duration-300 text-white-100 text-[1.75rem] font-bold bg-orange flex items-center py-[10px] px-[24px] gap-3 hover:bg-orange-800 mt-[60px] w-fit order-4
                             max-[1024px]:mt-[20px] max-[1024px]:text-[1.125rem]' title='Watch Now'>
                                 <FaPlay />
                                 WATCH NOW

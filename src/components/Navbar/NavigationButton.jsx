@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export const LogoButton = () => {
   return (
     <>
-        <Link to='/'>
+        <Link to='/RML-MGTLY-Ani/'>
             <img src={logo} alt={logo} srcSet={logo} />
         </Link>
     </>
@@ -15,13 +15,13 @@ export const LogoButton = () => {
 export const MenuButton = () => {
     return (
       <>
-        <Link to='/' className='font-medium hover:text-orange w-full'>
+        <Link to='/RML-MGTLY-Ani/' className='font-medium hover:text-orange w-full'>
             Home
         </Link>
-        <Link to='/Search' className='font-medium hover:text-orange w-full'>
+        <Link to='/RML-MGTLY-Ani/Search' className='font-medium hover:text-orange w-full'>
             Search
         </Link>
-        <Link to='/AboutUs' className='font-medium hover:text-orange w-full'>
+        <Link to='/RML-MGTLY-Ani/AboutUs' className='font-medium hover:text-orange w-full'>
             About Us
         </Link>
       </>

@@ -13,7 +13,7 @@ export const PageNotFound = () => {
             <p className='text-[2rem] max-[768px]:text-[1.5rem] font-bold'>Oooops! Page Not Found</p>
             <p className='text-[1.25rem] max-[768px]:text-[1rem] font-medium text-center'>Sorry, the page you're looking for doesn't exixting</p>
 
-            <Link to='/' className='mt-10 text-center bg-orange hover:bg-orange-800 rounded-xl font-bold text-white-100 p-3 text-[1.25rem] max-[768px]:text-[1rem]'>
+            <Link to='/RML-MGTLY-Ani/' className='mt-10 text-center bg-orange hover:bg-orange-800 rounded-xl font-bold text-white-100 p-3 text-[1.25rem] max-[768px]:text-[1rem]'>
                 Go to Home Page
             </Link>
         </section>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { FaSearch } from "react-icons/fa";
 import SideBar from './SideBar';
 import { SidebarContext } from '../../context/Sidebar/SidebarContext';
 import { LogoButton, MenuButton } from './NavigationButton';
